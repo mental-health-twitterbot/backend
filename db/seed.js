@@ -33,8 +33,8 @@ module.exports = async({ exampleToCreate = 10, questionToCreate = 10 } = {}) => 
   ]
 
   const questions = await Question.create([...Array(questionToCreate)].map(() => ({
-    question: chance.pickone(staticQuestions),
-    type: chance.pickone(questionType)  
+    question_text: chance.pickone(staticQuestions),
+    question_type: chance.pickone(questionType)  
     }
   })));
 
