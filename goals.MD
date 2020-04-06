@@ -38,20 +38,22 @@ Data Objects
 # FactSchema
 
   fact: {
-    text:
+    text: <required string>
     source:
     source_url:
     site_timestamp:
   }
-  hashtags:
-  has_tweeted:
+  has_tweeted: <required boolean>
 
 # QuestionSchema
-    question:
-    has_tweeted:
-    hashtags:
+    question: <required string>
+    has_tweeted: <required boolean>
     img_url:
+    type: 
 
+# Hashtag
+    tag:
+    type:
 
 Data Object Str          
   *stretch*
