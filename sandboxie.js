@@ -1,4 +1,4 @@
-const { eatingRecoveryCenter } = require('./lib/scrappers/eatingRecoveryCenter');
+const { self } = require('./lib/scrappers/self');
 
-eatingRecoveryCenter()
+self()
   .then(data => console.log(data));
