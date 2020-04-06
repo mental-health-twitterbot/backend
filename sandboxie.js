@@ -1,4 +1,4 @@
-const { nimhStress } = require('./lib/scrappers/nimh');
+const { hopeForDepression } = require('./lib/scrappers/hopeForDepression');
 
-nimhStress()
+hopeForDepression()
   .then(data => console.log(data));
