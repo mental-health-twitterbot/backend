@@ -4,7 +4,6 @@ const Question = require('../lib/models/Question');
 
 module.exports = async({ factsToCreate = 10, questionToCreate = 10 } = {}) => {
 
-
   const staticQuestions = [
     'What\'s your experience with this?',
     'What do you think?',
