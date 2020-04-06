@@ -35,6 +35,9 @@ MVP
 
 Data Objects
 ---------------
+The facts and hashtags reference eachother
+The question/prompts reference the facts
+
 # TweetSchema
   text: ref (fact) ref (question)
   hashtag: ref (hashtag)
@@ -55,6 +58,12 @@ Data Objects
     has_tweeted: <required boolean>
     img_url:
     type: 
+
+# MediaSchema (tdb)
+    link: <required string>
+    has_tweeted: <required boolean>
+    source:
+    type:
 
 # HashtagSchema
     tag:
@@ -93,3 +102,11 @@ Data Object Str
 
 start breaking up work into small pieces  
 what could you demo on each chunk?
+
+## Scraper Data
+- Can the data line stand alone? Readable facts
+- 280 characters max (hashtags and prompts, citations?)
+- Files: 
+    > By Source 
+- STRETCH: more contextual information (i.e. 'warning signs')
+- STRETCH: discussion boards on NAMI and more
