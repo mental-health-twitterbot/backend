@@ -24,7 +24,7 @@ module.exports = async({ factsToCreate = 10, questionToCreate = 10 } = {}) => {
     'act'
   ];
 
-  const hashtag_types = ['depression', 'anxiety', 'general', 'schizophrenia', 'adhd', 'bipolor', 'autism', 'ocd']
+  const hashtag_types = ['depression', 'anxiety', 'general', 'schizophrenia', 'adhd', 'bipolor', 'autism', 'ocd'];
   
   const questions = await Question.create([...Array(questionToCreate)].map(() => ({
     question_text: chance.pickone(staticQuestions),
