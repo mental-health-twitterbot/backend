@@ -1,4 +1,4 @@
-const { hopeForDepression } = require('./lib/scrappers/hopeForDepression');
+const { eatingRecoveryCenter } = require('./lib/scrappers/eatingRecoveryCenter');
 
-hopeForDepression()
+eatingRecoveryCenter()
   .then(data => console.log(data));
