@@ -7,7 +7,7 @@ module.exports = async({ exampleToCreate = 10 } = {}) => {
     address: {
       city: chance.city(),
       state: chance.state(),
-      country: chance.pickone(country)
+      country: chance.pickone()
     }
   })));
 

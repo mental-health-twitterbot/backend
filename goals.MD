@@ -41,7 +41,6 @@ Data Objects
   has_tweeted: <required boolean>
 
 # FactSchema
-
   fact: {
     text: <required string>
     source:
