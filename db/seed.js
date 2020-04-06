@@ -42,6 +42,5 @@ module.exports = async({ factsToCreate = 10, questionToCreate = 10 } = {}) => {
     type: chance.pickone(questions)._id,
     has_tweeted: chance.bool()
   })));
-
 };
 
