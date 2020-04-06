@@ -35,6 +35,11 @@ MVP
 
 Data Objects
 ---------------
+# TweetSchema
+  text: ref (fact) ref (question)
+  hashtag: ref (hashtag)
+  has_tweeted: <required boolean>
+
 # FactSchema
 
   fact: {
@@ -42,6 +47,7 @@ Data Objects
     source:
     source_url:
     site_timestamp:
+    type:
   }
   has_tweeted: <required boolean>
 
@@ -51,7 +57,7 @@ Data Objects
     img_url:
     type: 
 
-# Hashtag
+# HashtagSchema
     tag:
     type:
 
