@@ -40,6 +40,5 @@ module.exports = async({ factsToCreate = 10, questionToCreate = 10 } = {}) => {
     hashtag_type: chance.pickone(hashtag_types),
     has_tweeted: chance.bool()
   })));
-
 };
 
