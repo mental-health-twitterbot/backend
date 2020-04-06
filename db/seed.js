@@ -1,16 +1,9 @@
 const chance = require('chance').Chance();
+const Fact = require('../lib/models/Fact');
 const Question = require('../lib/models/Question');
 
-module.exports = async({ exampleToCreate = 10, questionToCreate = 10 } = {}) => {
+module.exports = async({ factsToCreate = 10, questionToCreate = 10 } = {}) => {
 
-  // const example = await Example.create([...Array(exampleToCreate)].map(() => ({
-  //   name: `${chance.animal()} Studios`, 
-  //   address: {
-  //     city: chance.city(),
-  //     state: chance.state(),
-  //     country: chance.pickone()
-  //   }
-  // })));
 
   const staticQuestions = [
     'What\'s your experience with this?',
@@ -31,13 +24,25 @@ module.exports = async({ exampleToCreate = 10, questionToCreate = 10 } = {}) => 
     'share',
     'act'
   ]
+  
+  const sources = ['NAMI', 'National Institute of Mental Health', 'Brain & Behavior Research Foundation', 'Trans Lifeline'];
+
+  const source_urls = ['nami.org', 'nimh.nih.gov', 'bbrfoundation.org', 'translifeline.org']
 
   const questions = await Question.create([...Array(questionToCreate)].map(() => ({
-    question_text: chance.pickone(staticQuestions),
-    question_type: chance.pickone(questionType)  
+    question: chance.pickone(staticQuestions),
+    type: chance.pickone(questionType)  
     }
   })));
 
+  const facts = await Fact.create([...Array(factsToCreate)].map(() => ({
+    text: chance.sentence(),
+    source: chance.pickone(sources),
+    source_url: chance.pickone(source_urls),
+    site_timestamp: chance.timestamp(),
+    type: chance.pickone(questions)._id,
+    has_tweeted: chance.bool()
+  })));
 
 };
 
