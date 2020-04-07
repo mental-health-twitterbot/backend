@@ -1,6 +1,6 @@
+const { eatingRecoveryCenter } = require('./lib/scrappers/eatingRecoveryCenter');
 
 
-const { anxietyDisorder } = require('./lib/scrappers/ADAA');
 // const { who, whoMentalDisorder, whoSchizophrenia } = require('./lib/scrappers/who');
 // const { anxietyDisorder } = require('./lib/scrappers/ADAA');
 // const { anxietyFacts } = require('./lib/scrappers/promisesbehavioral');
@@ -13,6 +13,14 @@ const { anxietyDisorder } = require('./lib/scrappers/ADAA');
 // whoSchizophrenia()
 //   .then(data => console.log(data));
 
-anxietyDisorder()
+
+
+eatingRecoveryCenter()
   .then(data => console.log(data));
+
+
+
+//DONE
+// anxietyDisorder()
+//   .then(data => console.log(data));
 
