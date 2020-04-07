@@ -42,7 +42,7 @@ module.exports = async({ factsToCreate = 10, questionToCreate = 10, hashtagsToCr
   const tweets = await Tweet.create([...Array(tweetsToCreate)].map(() => ({
     fact_tweet: chance.pickone(facts)._id,
     question_tweet:chance.pickone(questions)._id,
-    hashtag: chance.pickone(hashtags)._id,
+    hashtag_tweet: chance.pickone(hashtags)._id,
     has_tweeted: chance.bool()
   })));
 
