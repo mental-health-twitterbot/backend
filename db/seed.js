@@ -6,6 +6,7 @@ const Tweet = require('../lib/models/Tweet');
 
 module.exports = async({ factsToCreate = 10, questionToCreate = 10, hashtagsToCreate = 20, tweetsToCreate = 15 } = {}) => {
 
+
   const staticQuestions = [
     'What\'s your experience with this?',
     'What do you think?',
@@ -19,6 +20,7 @@ module.exports = async({ factsToCreate = 10, questionToCreate = 10, hashtagsToCr
   ];
 
   const hashtag_types = ['depression', 'anxiety', 'general', 'schizophrenia', 'adhd', 'bipolor', 'autism', 'ocd'];
+
   const tweetRefs = [Fact, Question];
 
   const questions = await Question.create([...Array(questionToCreate)].map(() => ({
@@ -46,4 +48,5 @@ module.exports = async({ factsToCreate = 10, questionToCreate = 10, hashtagsToCr
     hashtag: chance.pickone(hashtags)._id,
     has_tweeted: chance.bool()
   })));
+
 };
