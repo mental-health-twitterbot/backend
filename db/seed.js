@@ -19,8 +19,6 @@ module.exports = async({ factsToCreate = 10, questionToCreate = 10, hashtagsToCr
   ];
 
   const hashtag_types = ['depression', 'anxiety', 'general', 'schizophrenia', 'adhd', 'bipolor', 'autism', 'ocd'];
-
-  const tweetRefs = [Fact, Question];
   
   const questions = await Question.create([...Array(questionToCreate)].map(() => ({
     question_text: chance.pickone(staticQuestions),
@@ -42,9 +40,9 @@ module.exports = async({ factsToCreate = 10, questionToCreate = 10, hashtagsToCr
   })));
   
   const tweets = await Tweet.create([...Array(tweetsToCreate)].map(() => ({
-    tweet: chance.pickone(facts._id, questions._id),
-    onModel:chance.pickone(tweetRefs),
-    hashtag: chance.pickone(hashtags)._id,
+    fact_tweet: chance.pickone(facts)._id,
+    question_tweet:chance.pickone(questions)._id,
+    hashtag_tweet: chance.pickone(hashtags)._id,
     has_tweeted: chance.bool()
   })));
 
