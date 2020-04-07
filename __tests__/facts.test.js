@@ -13,6 +13,18 @@ describe('fact routes', () => {
       });
   });
 
+  it('gets a fact by hashtag type', async() => {
+    const fact = await getFact();
+    
+    return request(app)
+      .get(`/api/v1/facts/${fact.hashtag_type}`)
+      .then(res => {
+        expect(res.body).toEqual({
+          ...fact
+        });
+      });
+  });
+
 }); 
 
 
