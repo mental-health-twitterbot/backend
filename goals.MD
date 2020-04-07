@@ -110,3 +110,4 @@ what could you demo on each chunk?
     > By Source 
 - STRETCH: more contextual information (i.e. 'warning signs')
 - STRETCH: discussion boards on NAMI and more
+- STRETCH: images and infographs/ charts
