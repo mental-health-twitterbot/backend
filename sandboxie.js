@@ -1,4 +1,4 @@
-const { nami } = require('./lib/scrappers/nami');
+const { nimh } = require('./lib/scrappers/nimh');
 
 
 // const { who, whoMentalDisorder, whoSchizophrenia } = require('./lib/scrappers/who');
@@ -26,6 +26,9 @@ const { nami } = require('./lib/scrappers/nami');
 // hopeForDepression()
 //   .then(data => console.log(data));
 
-nami()
-  .then(data => console.log(data));
+//DONE
+// nami()
+//   .then(data => console.log(data));
 
+nimh()
+  .then(data => console.log(data));
