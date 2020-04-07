@@ -14,13 +14,13 @@ describe('fact routes', () => {
   });
 
   it('gets a fact by hashtag type', async() => {
-    const fact = await getFact();
     
     return request(app)
-      .get(`/api/v1/facts/${fact.hashtag_type}`)
+      .get('/api/v1/facts/types')
       .then(res => {
-        expect(res.body).toEqual({
-          ...fact
+        expect(res.body).toContainEqual({
+          _id: expect.any(String),
+          facts: expect.any(Array) 
         });
       });
   });
