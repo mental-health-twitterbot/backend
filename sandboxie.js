@@ -1,4 +1,4 @@
-const { hopeForDepression } = require('./lib/scrappers/hopeForDepression');
+const { nami } = require('./lib/scrappers/nami');
 
 
 // const { who, whoMentalDisorder, whoSchizophrenia } = require('./lib/scrappers/who');
@@ -22,6 +22,10 @@ const { hopeForDepression } = require('./lib/scrappers/hopeForDepression');
 // anxietyDisorder()
 //   .then(data => console.log(data));
 
-hopeForDepression()
+//DONE
+// hopeForDepression()
+//   .then(data => console.log(data));
+
+nami()
   .then(data => console.log(data));
 
