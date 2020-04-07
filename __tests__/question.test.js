@@ -6,7 +6,7 @@ const app = require('../lib/app');
 describe('app routes', () => {
 
 
-  it('gets a question', () => {
+  it('gets a random question', () => {
     return request(app)
       .get('/api/v1/question')
       .then(res => {
