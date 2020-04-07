@@ -16,3 +16,4 @@ anxietyDisorder()
 
 anxietyFacts()
   .then(data => console.log(data));
+
