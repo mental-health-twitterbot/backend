@@ -21,7 +21,7 @@ module.exports = async({ factsToCreate = 10, questionToCreate = 10, hashtagsToCr
   const hashtag_types = ['depression', 'anxiety', 'general', 'schizophrenia', 'adhd', 'bipolor', 'autism', 'ocd'];
 
   const tweetRefs = [Fact, Question];
-  
+
   const questions = await Question.create([...Array(questionToCreate)].map(() => ({
     question_text: chance.pickone(staticQuestions),
   }
