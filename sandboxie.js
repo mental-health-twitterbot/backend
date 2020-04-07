@@ -1,18 +1,19 @@
-const fetch = require('node-fetch');
-const html = require('node-html-parser');
 
-fetch('https://www.who.int/news-room/facts-in-pictures/detail/mental-health')
-  .then(res => res.text())
-  .then(text => html.parse(text))
-  .then(document => {
-    console.log(document.querySelectorAll('h4').map(content => content.text));
-  });
+const { who, whoMentalDisorder, whoSchizophrenia } = require('./lib/scrappers/who');
+const { anxietyDisorder } = require('./lib/scrappers/ADAA');
+const { anxietyFacts } = require('./lib/scrappers/promisesbehavioral');
+who()
+  .then(data => console.log(data));
 
+whoMentalDisorder()
+  .then(data => console.log(data));
 
-fetch('https://www.nami.org/Learn-More/Mental-Health-By-the-Numbers')
-  .then(res => res.text())
-  .then(text => html.parse(text))
-  .then(document => {
-    console.log(document.querySelectorAll('.content li').map(content => content.text));
-  });
-//html.querySelectorAll('.pi-data-label').map(label => label.structuredText);
+whoSchizophrenia()
+  .then(data => console.log(data));
+
+anxietyDisorder()
+  .then(data => console.log(data));
+
+anxietyFacts()
+  .then(data => console.log(data));
+
