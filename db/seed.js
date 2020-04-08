@@ -18,7 +18,7 @@ module.exports = async({ factsToCreate = 10, questionToCreate = 10, hashtagsToCr
     'What would you like to see change?'
   ];
 
-  const hashtag_types = ['depression', 'anxiety', 'general', 'schizophrenia', 'adhd', 'bipolor', 'autism', 'ocd'];
+  const hashtag_types = ['general', 'keyword'];
   
   const questions = await Question.create([...Array(questionToCreate)].map(() => ({
     question_text: chance.pickone(staticQuestions),
@@ -30,13 +30,12 @@ module.exports = async({ factsToCreate = 10, questionToCreate = 10, hashtagsToCr
     source: `${chance.animal()} Institute`,
     source_url: chance.url(),
     site_timestamp: chance.timestamp(),
-    hashtag_type: chance.pickone(hashtag_types),
     has_tweeted: chance.bool()
   })));
 
   const hashtags = await Hashtag.create([...Array(hashtagsToCreate)].map(() => ({
     hashtag: chance.hashtag(),
-    hashtag_type:  chance.pickone(facts)._id
+    hashtag_type:  chance.pickone(hashtag_types)
   })));
   
   const tweets = await Tweet.create([...Array(tweetsToCreate)].map(() => ({
