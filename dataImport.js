@@ -2,14 +2,14 @@ require('dotenv').config();
 require('./lib/utils/connect')();
 
 //scraper functions that return facts as an array of strings
-const { who, whoMentalDisorder, whoSchizophrenia } = require('./lib/scrappers/who');
-const { eatingRecoveryCenter } = require('./lib/scrappers/eatingRecoveryCenter');
-const { hopeForDepression } = require('./lib/scrappers/hopeForDepression');
-const { anxietyDisorder } = require('./lib/scrappers/ADAA');
-const { anxietyFacts } = require('./lib/scrappers/promisesbehavioral');
-const { nimh } = require('./lib/scrappers/nimh');
-const { nami } = require('./lib/scrappers/nami');
-const { self } = require('./lib/scrappers/self');
+const { who, whoMentalDisorder, whoSchizophrenia } = require('./lib/scrapers/who');
+const { eatingRecoveryCenter } = require('./lib/scrapers/eatingRecoveryCenter');
+const { hopeForDepression } = require('./lib/scrapers/hopeForDepression');
+const { anxietyDisorder } = require('./lib/scrapers/ADAA');
+const { anxietyFacts } = require('./lib/scrapers/promisesbehavioral');
+const { nimh } = require('./lib/scrapers/nimh');
+const { nami } = require('./lib/scrapers/nami');
+const { self } = require('./lib/scrapers/self');
 
 const Fact = require('./lib/models/Fact');
 
