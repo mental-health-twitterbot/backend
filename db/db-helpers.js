@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 const connect = require('../lib/utils/connect');
-const seed = require('../db/seed');
+const dataImport = require('../db/dataImport');
 const mongoose = require('mongoose');
 const fs = require('fs');
 
@@ -14,7 +14,7 @@ beforeEach(() => {
 });
 
 beforeEach(() => {
-  return seed();
+  return dataImport();
 });
 
 afterAll(() => {
