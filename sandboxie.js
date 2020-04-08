@@ -1,9 +1,9 @@
-const { nimh } = require('./lib/scrappers/nimh');
-const { anxietyFacts } = require('./lib/scrappers/promisesbehavioral');
+const { nimh } = require('./lib/scrapers/nimh');
+const { anxietyFacts } = require('./lib/scrapers/promisesbehavioral');
 
-// const { who, whoMentalDisorder, whoSchizophrenia } = require('./lib/scrappers/who');
-// const { anxietyDisorder } = require('./lib/scrappers/ADAA');
-// const { anxietyFacts } = require('./lib/scrappers/promisesbehavioral');
+// const { who, whoMentalDisorder, whoSchizophrenia } = require('./lib/scrapers/who');
+// const { anxietyDisorder } = require('./lib/scrapers/ADAA');
+// const { anxietyFacts } = require('./lib/scrapers/promisesbehavioral');
 // // who()
 //   .then(data => console.log(data));
 
