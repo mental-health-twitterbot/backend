@@ -36,7 +36,7 @@ Promise.all([
     facts.map(fact => ({ 
       fact_text: fact,
       has_tweeted: false,
-      hashtag_type: 'adhd'
+      hashtag_type: 'general'
     }))));
   
 // source, and other not required props we can keep off for now
