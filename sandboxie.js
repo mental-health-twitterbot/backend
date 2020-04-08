@@ -1,5 +1,4 @@
-const { nimh } = require('./lib/scrapers/nimh');
-const { anxietyFacts } = require('./lib/scrapers/promisesbehavioral');
+const Tweet = require('./lib/models/Tweet');
 
 // const { who, whoMentalDisorder, whoSchizophrenia } = require('./lib/scrapers/who');
 // const { anxietyDisorder } = require('./lib/scrapers/ADAA');
@@ -53,3 +52,6 @@ const { anxietyFacts } = require('./lib/scrapers/promisesbehavioral');
 // DONE
 // anxietyFacts()
 //   .then(data => console.log(data));
+
+const tweet = Tweet.tweet;
+console.log(tweet);
