@@ -1,8 +1,10 @@
 const chance = require('chance').Chance();
 const Fact = require('../lib/models/Fact');
 const Question = require('../lib/models/Question');
+const Hashtag = require('../lib/models/Hashtag');
+const Tweet = require('../lib/models/Tweet');
 
-module.exports = async({ factsToCreate = 10, questionToCreate = 10 } = {}) => {
+module.exports = async({ factsToCreate = 10, questionToCreate = 10, hashtagsToCreate = 20, tweetsToCreate = 15 } = {}) => {
 
   const staticQuestions = [
     'What\'s your experience with this?',
@@ -29,6 +31,18 @@ module.exports = async({ factsToCreate = 10, questionToCreate = 10 } = {}) => {
     source_url: chance.url(),
     site_timestamp: chance.timestamp(),
     hashtag_type: chance.pickone(hashtag_types),
+    has_tweeted: chance.bool()
+  })));
+
+  const hashtags = await Hashtag.create([...Array(hashtagsToCreate)].map(() => ({
+    hashtag: chance.hashtag(),
+    hashtag_type:  chance.pickone(facts)._id
+  })));
+  
+  const tweets = await Tweet.create([...Array(tweetsToCreate)].map(() => ({
+    fact_tweet: chance.pickone(facts)._id,
+    question_tweet:chance.pickone(questions)._id,
+    hashtag_tweet: chance.pickone(hashtags)._id,
     has_tweeted: chance.bool()
   })));
 };
