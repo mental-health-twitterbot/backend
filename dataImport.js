@@ -26,6 +26,12 @@ Promise.all([
   who()
 ])
   .then(facts => facts.flat(Infinity))
+  .then(facts => facts.reduce((acc, curr) => {
+    if(curr.length < 250) {
+      acc.push(curr);
+    } return acc;
+  }, []))
+  // .then(facts => console.log(facts.length));
   .then(facts => Fact.create(
     facts.map(fact => ({ 
       fact_text: fact,
