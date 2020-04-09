@@ -9,13 +9,13 @@ beforeAll(() => {
   connect();
 });
 
-beforeEach(() => {
-  return mongoose.connection.dropDatabase();
-});
+// beforeEach(() => {
+//   return mongoose.connection.dropDatabase();
+// });
 
-beforeEach(() => {
-  return dataImport();
-});
+// beforeEach(() => {
+//   return dataImport();
+// });
 
 afterAll(() => {
   return mongoose.connection.close();
