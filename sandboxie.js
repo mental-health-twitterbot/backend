@@ -1,4 +1,9 @@
 const Tweet = require('./lib/models/Tweet');
+require('dotenv').config();
+require('./lib/utils/connect')();
+
+Tweet.generate(10)
+  .then(console.log);
 
 // const { who, whoMentalDisorder, whoSchizophrenia } = require('./lib/scrapers/who');
 // const { anxietyDisorder } = require('./lib/scrapers/ADAA');
@@ -53,5 +58,5 @@ const Tweet = require('./lib/models/Tweet');
 // anxietyFacts()
 //   .then(data => console.log(data));
 
-const tweet = Tweet.tweet;
-console.log(tweet);
+// const tweet = Tweet.tweet;
+// console.log(tweet);
