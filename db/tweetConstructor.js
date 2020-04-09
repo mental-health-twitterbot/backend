@@ -19,15 +19,15 @@ const preTweets = allFacts.map(fact =>{
       question = getQuestion();   
     }
     const factQuestion = `${fact} ${question}`;
-
     //deconstruct the fact string into an array of single word strings
-    //loop over words and .find matching word in hashtag array (keywordHash)
-    return factQuestion.split(' ').find(word => {
-        
-    });
+    //loop over words and .filter matching word in hashtag array (keywordHash)
+    const hashMatches = factQuestion.split(' ').filter(word => keywordHash.includes(word));
+    return `${factQuestion} #${hashMatches[0]} #${generalHash}`;
   } 
-  return fact;
+  const hashMatches = fact.split(' ').filter(word => keywordHash.includes(word));
+  return `${fact} #${hashMatches[0]} #${generalHash}`;
 });
+
 
 //now concatonate all that!
 const tweetResult = `${fact} ${question} #${keywordHash} #${generalHash}`;
