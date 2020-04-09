@@ -5,7 +5,7 @@ const { getTweet } = require('../db/db-helpers');
 describe('tweet routes', () => { 
     
   //GET route from our db
-  it('gets a single tweet', () => {
+  it('gets a single tweet', () => {  
     return request(app)
       .get('/api/v1/tweets')
       .then(res => {
@@ -33,7 +33,19 @@ describe('tweet routes', () => {
       });
   });
 
+  it('gets a tweet and updates it to approved', async() => {
+    const tweet = await getTweet();
 
-  //POST route to Twitter API
+    return request(app)
+      .get(`/api/v1/tweets/approve/${tweet._id}`)
+      .send({ approved: true })
+      .then(res => {
+        expect(res.body).toEqual({
+          ...tweet, 
+          approved: true
+        });
+      });
+  });
 
 });
+
