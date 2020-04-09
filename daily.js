@@ -15,5 +15,3 @@ Tweet.findOneAndUpdate({
 
 //   once have twiiter integration instead of concole loging (sendTweet();)
 
-
-
