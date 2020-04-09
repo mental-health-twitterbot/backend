@@ -5,7 +5,7 @@ const { getTweet } = require('../db/db-helpers');
 describe('tweet routes', () => { 
     
   //GET route from our db
-  it('gets a tweet', () => {
+  it('gets a single tweet', () => {
     return request(app)
       .get('/api/v1/tweets')
       .then(res => {
@@ -18,6 +18,21 @@ describe('tweet routes', () => {
         });
       });
   });
+
+  it('gets all tweets', () => {
+    return request(app)
+      .get('/api/v1/tweets')
+      .then(res => {
+        expect(res.body).toContainEqual({
+          _id: expect.any(String),
+          tweet_text: expect.any(String),
+          approved: 'false',
+          has_tweeted: 'false',
+          __v: 0
+        });
+      });
+  });
+
 
   //POST route to Twitter API
 
