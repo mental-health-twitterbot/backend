@@ -28,13 +28,11 @@ const preTweets = allFacts.map(fact =>{
   return `${fact} #${hashMatches[0]} #${generalHash}`;
 });
 
-
 //now concatonate all that!
 const tweetResult = `${fact} ${question} #${keywordHash} #${generalHash}`;
 
 //select one or two hashtags
 //if less than 270 characters... get a general hashtag 
-
 
 
 Tweet.create(tweetResult.map(tweet => ({ 
