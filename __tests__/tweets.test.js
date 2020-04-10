@@ -24,7 +24,6 @@ describe('tweet routes', () => {
 
     return request(app)
       .get(`/api/v1/tweets/approve/${tweet._id}`)
-      .send({ approved: true })
       .then(res => {
         expect(res.body).toEqual({
           ...tweet, 
