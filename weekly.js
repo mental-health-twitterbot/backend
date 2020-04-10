@@ -1,3 +1,6 @@
+require('./lib/models/Hashtag.js');
+require('./lib/models/Fact.js');
+require('./lib/models/Question');
 require('dotenv').config();
 require('./lib/utils/connect')();
 const Tweet = require('./lib/models/Tweet');
