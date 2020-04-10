@@ -17,19 +17,21 @@ const hashtagData = require('../db/hashtag-seed');
 
 module.exports = async() => {
   const facts = await Promise.all([
-    eatingRecoveryCenter(),
-    whoMentalDisorder(),
     hopeForDepression(),
-    whoSchizophrenia(),
-    anxietyDisorder(),
-    anxietyFacts(),
-    nimh(),
     nami(), 
-    self(), 
-    who()
+    who(),
+    nimh(),
+    self(),
+    anxietyFacts(),
+    anxietyDisorder(),
+    whoSchizophrenia(),
+    whoMentalDisorder(),
+    eatingRecoveryCenter(), 
+    
   ]);
   const flatFacts = facts.flat(Infinity);
   const tweetableFacts = flatFacts.filter(fact => fact.length < 250 && fact.length > 0);
+
   const factPromise = Fact.create(tweetableFacts.map(fact => ({ 
     fact_text: fact,
     has_tweeted: false
@@ -45,8 +47,7 @@ module.exports = async() => {
       hashtag: hashtag.hashtag,
       hashtag_type: hashtag.type
     })));
+
   return Promise.all([factPromise, questionPromise, hashtagPromise]);
 };
   
-// source, and other not required props we can keep off for now
-
