@@ -9,9 +9,13 @@ beforeAll(() => {
   connect();
 });
 
-beforeEach(() => {
-  return mongoose.connection.dropDatabase();
-});
+// beforeEach(() => {
+//   Promise.all([
+//     mongoose.connection.dropCollection('facts'),
+//     mongoose.connection.dropCollection('hashtags'),
+//     mongoose.connection.dropCollection('questions')
+//   ]);
+// });
 
 beforeEach(() => {
   return dataImport();

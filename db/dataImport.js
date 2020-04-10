@@ -1,6 +1,3 @@
-require('dotenv').config();
-require('../lib/utils/connect')();
-
 //scraper functions that return facts as an array of strings
 const { who, whoMentalDisorder, whoSchizophrenia } = require('../lib/scrapers/who');
 const { eatingRecoveryCenter } = require('../lib/scrapers/eatingRecoveryCenter');
@@ -32,7 +29,7 @@ module.exports = async() => {
     who()
   ]);
   const flatFacts = facts.flat(Infinity);
-  const tweetableFacts = flatFacts.filter(fact => fact.length < 250);
+  const tweetableFacts = flatFacts.filter(fact => fact.length < 250 && fact.length > 0);
   const factPromise = Fact.create(tweetableFacts.map(fact => ({ 
     fact_text: fact,
     has_tweeted: false
