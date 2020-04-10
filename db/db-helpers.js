@@ -10,12 +10,16 @@ beforeAll(() => {
 });
 
 // beforeEach(() => {
-//   return mongoose.connection.dropDatabase();
+//   Promise.all([
+//     mongoose.connection.dropCollection('facts'),
+//     mongoose.connection.dropCollection('hashtags'),
+//     mongoose.connection.dropCollection('questions')
+//   ]);
 // });
 
-// beforeEach(() => {
-//   return dataImport();
-// });
+beforeEach(() => {
+  return dataImport();
+});
 
 afterAll(() => {
   return mongoose.connection.close();
