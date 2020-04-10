@@ -1,4 +1,7 @@
 const Tweet = require('./lib/models/Tweet');
+const Question = require('./lib/models/Question');
+const Fact = require('./lib/models/Fact');
+const Hashtag = require('./lib/models/Hashtag');
 require('dotenv').config();
 require('./lib/utils/connect')();
 
