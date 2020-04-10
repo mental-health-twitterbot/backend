@@ -2,7 +2,7 @@ const Tweet = require('./lib/models/Tweet');
 require('dotenv').config();
 require('./lib/utils/connect')();
 
-Tweet.generate(10)
+Tweet.generate(20)
   .then(console.log);
 
 // const { who, whoMentalDisorder, whoSchizophrenia } = require('./lib/scrapers/who');

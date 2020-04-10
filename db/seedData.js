@@ -16,5 +16,3 @@ Promise.all([
     console.log('data seed complete');
     return mongoose.connection.close();
   });
-
-

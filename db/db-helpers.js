@@ -1,5 +1,5 @@
 require('dotenv').config();
-
+const Tweet = require('../lib/models/Tweet');
 const connect = require('../lib/utils/connect');
 const dataImport = require('../db/dataImport');
 const mongoose = require('mongoose');
@@ -7,18 +7,19 @@ const fs = require('fs');
 
 beforeAll(() => {
   connect();
+  Promise.all([
+    mongoose.connection.dropCollection('facts'),
+    mongoose.connection.dropCollection('hashtags'),
+    mongoose.connection.dropCollection('questions')
+  ]);
+  Tweet.generate(10)
+    .then(console.log);
+  return dataImport();
+  
 });
 
-// beforeEach(() => {
-//   Promise.all([
-//     mongoose.connection.dropCollection('facts'),
-//     mongoose.connection.dropCollection('hashtags'),
-//     mongoose.connection.dropCollection('questions')
-//   ]);
-// });
-
 beforeEach(() => {
-  return dataImport();
+
 });
 
 afterAll(() => {

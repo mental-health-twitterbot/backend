@@ -54,7 +54,6 @@ const hashtagData = [
     hashtag: 'ocd',
     type: 'keyword' 
   },
-
 ];
 
 module.exports = hashtagData;
