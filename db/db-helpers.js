@@ -45,6 +45,10 @@ beforeAll(() => {
     .then(() => Tweet.generate(10));
 });
 
+afterAll(() => {
+  return mongoose.connection.close();
+});
+
 const prepare = model => JSON.parse(JSON.stringify(model));
 const prepareAll = models => models.map(prepare);
 
