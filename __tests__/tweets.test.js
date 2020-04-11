@@ -9,12 +9,12 @@ describe('tweet routes', () => {
     return request(app)
       .get('/api/v1/tweets')
       .then(res => {
-        // console.log(res.body);
+        console.log(res.body);
         expect(res.body).toContainEqual({
           _id: expect.any(String),
           tweet_text: expect.any(String),
-          approved: true,
-          has_tweeted: true,
+          approved: expect.any(Boolean),
+          has_tweeted: expect.any(Boolean),
           tweet_url: expect.any(String),
           __v: 0
         });
@@ -23,7 +23,7 @@ describe('tweet routes', () => {
   });
 
   it('returns an empty object if there are no tweets that are both approved and not tweeted', async() => {
-    await getTweets({ approved: true });
+    await getTweets({ approved: true, has_tweeted: false });
     return request(app)
       .get('/api/v1/tweets/content')
       .then(res => {

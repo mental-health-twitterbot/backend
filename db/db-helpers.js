@@ -12,13 +12,12 @@ beforeAll(() => {
     mongoose.connection.dropCollection('hashtags'),
     mongoose.connection.dropCollection('questions')
   ]);
-  Tweet.generate(10)
-    .then(console.log);
   return dataImport();
-  
 });
 
 beforeEach(() => {
+  Tweet.generate(10)
+    .then(console.log);
 
 });
 
