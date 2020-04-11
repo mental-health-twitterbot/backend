@@ -6,20 +6,10 @@ const mongoose = require('mongoose');
 const fs = require('fs');
 
 beforeAll(() => {
-  connect();
-  Promise.all([
-    mongoose.connection.dropCollection('facts'),
-    mongoose.connection.dropCollection('hashtags'),
-    mongoose.connection.dropCollection('questions')
-  ]);
-  Tweet.generate(10)
-    .then(console.log);
-  return dataImport();
-  
-});
-
-beforeEach(() => {
-
+  return connect()
+    .then(() => mongoose.connection.dropDatabase())
+    .then(() => dataImport())
+    .then(() => Tweet.generate(10));
 });
 
 afterAll(() => {
