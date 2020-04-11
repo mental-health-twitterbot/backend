@@ -9,12 +9,13 @@ describe('tweet routes', () => {
     return request(app)
       .get('/api/v1/tweets')
       .then(res => {
-        console.log(res.body);
+        // console.log(res.body);
         expect(res.body).toContainEqual({
           _id: tweets[0]._id,
           tweet_text: tweets[0].tweet_text,
           approved: true,
           has_tweeted: true,
+          tweet_url: tweets[0].tweet_url,
           __v: 0
         });
 
