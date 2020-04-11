@@ -5,39 +5,6 @@ const dataImport = require('../db/dataImport');
 const mongoose = require('mongoose');
 const fs = require('fs');
 
-// beforeAll(() => {
-//   connect();
-//   Promise.all([
-//     mongoose.connection.dropCollection('facts'),
-//     mongoose.connection.dropCollection('hashtags'),
-//     mongoose.connection.dropCollection('questions')
-//   ]);
-//   return dataImport();
-// });
-
-// beforeEach(() => {
-//   Tweet.generate(10)
-//     .then(console.log);
-// });
-
-// afterAll(() => {
-//   return mongoose.connection.close();
-// });
-
-//Ryan's first suggestion
-// beforeAll(() => {
-//   connect();
-// });
-// beforeAll(() => {
-//   return mongoose.dropDatabase();
-// });
-// beforeAll(() => {
-//   return dataImport();
-// });
-// beforeEach(() => {
-//   return Tweet.generate(10);
-// });
-
 beforeAll(() => {
   return connect()
     .then(() => mongoose.connection.dropDatabase())
