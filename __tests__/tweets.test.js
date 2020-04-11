@@ -11,7 +11,7 @@ describe('tweet routes', () => {
       .then(res => {
         // console.log(res.body);
         expect(res.body).toContainEqual({
-          _id: tweets[0]._id,
+          _id: expect.any(String),
           tweet_text: tweets[0].tweet_text,
           approved: true,
           has_tweeted: true,
