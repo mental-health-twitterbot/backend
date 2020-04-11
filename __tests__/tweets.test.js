@@ -22,18 +22,12 @@ describe('tweet routes', () => {
       });
   });
 
-  it('gets all approved tweets', async() => {
-    const tweets = await getTweets({ approved: true });
+  it('returns an empty object if there are no tweets that are both approved and not tweeted', async() => {
+    await getTweets({ approved: true });
     return request(app)
       .get('/api/v1/tweets/content')
       .then(res => {
-        expect(res.body).toContainEqual([{
-          _id: expect.any(String),
-          tweet_text: tweets[0].tweet_text,
-          approved: tweets[0].approved,
-          has_tweeted: tweets[0].has_tweeted,
-          __v: 0
-        }]);
+        expect(res.body).toEqual({});
       });
   });
 
