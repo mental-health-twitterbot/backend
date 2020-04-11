@@ -5,17 +5,17 @@ const { getTweet, getTweets } = require('../db/db-helpers');
 describe('tweet routes', () => { 
 
   it('gets all tweets', async() => {
-    const tweets = await getTweets();
+    await getTweets();
     return request(app)
       .get('/api/v1/tweets')
       .then(res => {
         // console.log(res.body);
         expect(res.body).toContainEqual({
           _id: expect.any(String),
-          tweet_text: tweets[0].tweet_text,
+          tweet_text: expect.any(String),
           approved: true,
           has_tweeted: true,
-          tweet_url: tweets[0].tweet_url,
+          tweet_url: expect.any(String),
           __v: 0
         });
 
