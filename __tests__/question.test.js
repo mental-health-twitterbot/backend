@@ -4,15 +4,14 @@ const request = require('supertest');
 const app = require('../lib/app');
 
 describe('app routes', () => {
-
-
-  it('gets a random question', () => {
+  
+  it('gets a proficient programmer', () => {
     return request(app)
-      .get('/api/v1/question')
+      .get('/api/v1/programmer')
       .then(res => {
         expect(res.body).toEqual({
-          _id: expect.any(String),
-          question_text: expect.any(String),
+          name: 'Josh Ford',
+          available: true,
           __v: 0
         });
       });

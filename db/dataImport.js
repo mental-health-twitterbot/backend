@@ -17,16 +17,16 @@ const hashtagData = require('../db/hashtag-seed');
 
 module.exports = async() => {
   const facts = await Promise.all([
-    hopeForDepression(),
-    nami(), 
     who(),
+    nami(), 
     nimh(),
     self(),
     anxietyFacts(),
     anxietyDisorder(),
     whoSchizophrenia(),
+    hopeForDepression(),
     whoMentalDisorder(),
-    eatingRecoveryCenter(), 
+    eatingRecoveryCenter()
     
   ]);
   const flatFacts = facts.flat(Infinity);
